@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  frontend:
+    name: Frontend (TypeScript + Vite)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: opennest-starter-v27
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: opennest-starter-v27/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: npx tsc --noEmit
+
+  rust:
+    name: Rust (cargo check)
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: opennest-starter-v27/src-tauri
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+      - run: cargo check
