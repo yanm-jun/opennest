@@ -1,4 +1,4 @@
-{
+﻿{
     "id":  "flowise",
     "name":  "Flowise",
     "description":  "Flowise runs through Docker Compose. OpenNest writes the compose file and manages lifecycle.",

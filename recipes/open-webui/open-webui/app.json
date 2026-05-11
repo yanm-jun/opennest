@@ -1,4 +1,4 @@
-{
+﻿{
     "id":  "open-webui",
     "name":  "Open WebUI",
     "description":  "A local web UI for AI models. OpenNest manages Docker Compose lifecycle and opens the dashboard.",

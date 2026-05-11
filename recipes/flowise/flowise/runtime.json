@@ -1,0 +1,8 @@
+{
+  "installedState": "not_installed",
+  "effectivePort": 3001,
+  "effectiveDashboardUrl": "http://127.0.0.1:3001/",
+  "lastStartTime": null,
+  "lastHealthResult": null,
+  "logsPath": "${appDir}/logs/flowise.log"
+}

@@ -1,4 +1,4 @@
-{
+﻿{
     "id":  "dify",
     "name":  "Dify",
     "description":  "Dify is a large multi-service stack. OpenNest should use external-compose strategy instead of hand-maintaining a huge compose file.",

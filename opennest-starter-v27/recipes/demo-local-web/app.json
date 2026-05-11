@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "demo-local-web",
     "name":  "Demo Local Web",
     "description":  "A tiny local-web demo recipe used to prove new apps can be added by template without touching core runtime code.",

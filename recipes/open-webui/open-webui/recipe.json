@@ -1,0 +1,34 @@
+{
+  "runtimeType": "docker-compose",
+  "versionSource": "docker:ghcr.io/open-webui/open-webui:main",
+  "license": "upstream",
+  "paths": {
+    "appDir": "${openNestAppData}/apps/open-webui",
+    "composePath": "${appDir}/docker-compose.yml",
+    "logsDir": "${appDir}/logs"
+  },
+  "install": {
+    "strategy": "write-compose",
+    "source": "recipes/open-webui/docker-compose.yml"
+  },
+  "start": {
+    "strategy": "docker-compose",
+    "args": ["up", "-d"],
+    "healthcheck": "http://127.0.0.1:3000/"
+  },
+  "stop": {
+    "strategy": "docker-compose",
+    "args": ["stop"]
+  },
+  "dashboard": {
+    "strategy": "url",
+    "url": "http://127.0.0.1:3000/"
+  },
+  "logs": {
+    "strategy": "docker-compose-logs",
+    "tail": 200
+  },
+  "permissions": [
+    { "type": "network", "level": "local", "description": "Opens a local web UI on 127.0.0.1:3000." }
+  ]
+}

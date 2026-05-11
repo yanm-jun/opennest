@@ -1,0 +1,40 @@
+{
+  "runtimeType": "external-compose",
+  "versionSource": "github:langgenius/dify/docker",
+  "license": "upstream",
+  "paths": {
+    "appDir": "${openNestAppData}/apps/dify",
+    "repoDir": "${appDir}/source",
+    "composeDir": "${appDir}/source/docker",
+    "logsDir": "${appDir}/logs"
+  },
+  "install": {
+    "strategy": "clone-official-compose",
+    "repo": "https://github.com/langgenius/dify.git",
+    "composeDir": "docker",
+    "envExample": ".env.example",
+    "envTarget": ".env",
+    "ref": "main"
+  },
+  "start": {
+    "strategy": "docker-compose",
+    "args": ["up", "-d"],
+    "healthcheck": "http://127.0.0.1/"
+  },
+  "stop": {
+    "strategy": "docker-compose",
+    "args": ["stop"]
+  },
+  "dashboard": {
+    "strategy": "url",
+    "url": "http://127.0.0.1/"
+  },
+  "logs": {
+    "strategy": "docker-compose-logs",
+    "tail": 200
+  },
+  "permissions": [
+    { "type": "network", "level": "local", "description": "Runs a multi-container local Dify stack." },
+    { "type": "storage", "level": "app-data", "description": "Stores source, compose files, volumes, and logs in OpenNest app data." }
+  ]
+}

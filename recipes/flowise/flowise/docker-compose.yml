@@ -1,0 +1,17 @@
+services:
+  flowise:
+    image: flowiseai/flowise:latest
+    container_name: opennest-flowise
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      - PORT=3000
+      - FLOWISE_USERNAME=${FLOWISE_USERNAME:-}
+      - FLOWISE_PASSWORD=${FLOWISE_PASSWORD:-}
+      - DATABASE_PATH=/root/.flowise
+    volumes:
+      - flowise-data:/root/.flowise
+
+volumes:
+  flowise-data:

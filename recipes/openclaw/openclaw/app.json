@@ -1,4 +1,4 @@
-{
+﻿{
     "id":  "openclaw",
     "name":  "OpenClaw",
     "description":  "OpenClaw is a local AI assistant gateway. OpenNest manages install, secrets, gateway lifecycle, logs, and dashboard opening.",
