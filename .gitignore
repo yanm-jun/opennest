@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.vite/
+*.log
+*.png
+*.jpg
+video_frames/
+.playwright-cli/
+_tmp_web_design_repo/
+.TEAM_HANDOFF/
+openclaw_*_check.png
+opennest_*_check.png
+*.temp.*
