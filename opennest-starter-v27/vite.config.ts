@@ -13,6 +13,7 @@ export default defineConfig(({ command }) => ({
     host: host || "127.0.0.1",
     port: 1420,
     strictPort: true,
+    optimizeDeps: { exclude: ["@tauri-apps/api"] },
     watch: {
       ignored: ["**/src-tauri/**"],
     },

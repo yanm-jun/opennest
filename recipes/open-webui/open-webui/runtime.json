@@ -1,8 +1,0 @@
-{
-  "installedState": "not_installed",
-  "effectivePort": 3000,
-  "effectiveDashboardUrl": "http://127.0.0.1:3000/",
-  "lastStartTime": null,
-  "lastHealthResult": null,
-  "logsPath": "${appDir}/logs/open-webui.log"
-}

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
-  <rect width="1280" height="720" fill="#0f172a"/>
-  <rect x="40" y="40" width="1200" height="640" rx="16" fill="none" stroke="#334155" stroke-width="2"/>
-  <text x="640" y="320" text-anchor="middle" fill="#e2e8f0" font-family="Arial" font-size="48" font-weight="bold">Flowise</text>
-  <text x="640" y="380" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="20">拖拽式 AI 工作流构建器</text>
-  <text x="640" y="440" text-anchor="middle" fill="#475569" font-family="Arial" font-size="14">Screenshot placeholder</text>
-</svg>

@@ -17,7 +17,7 @@ fn current_status(app: &AppHandle, recipe: &recipe_loader::OpenNestRecipe) -> Re
     match recipe.runtime.as_str() {
         // OpenClaw is a managed native process in this adapter, so every status read
         // must reconcile the stored status with the real PID + port health.
-        "native-cli" if recipe.id == "openclaw" => process_manager::reconcile_status(app, status),
+        "native-cli" => process_manager::reconcile_status(app, status),
         "docker-compose" => docker_status::reconcile_status(app, recipe, status),
         "external-compose" => external_compose::reconcile_status(app, recipe, status),
         "webview" => webview::reconcile_status(app, recipe, status),
@@ -186,7 +186,7 @@ pub fn check_environment(app: &AppHandle, app_id: &str) -> Result<RuntimeActionR
     progress_events::step(app, &recipe.id, &progress_id, operation, "runtime-check", 1, total_steps, "Checking required runtime tools.");
 
     let result = match recipe.runtime.as_str() {
-        "native-cli" if recipe.id == "openclaw" => {
+        "native-cli" => {
             logs::append(app, &recipe.id, "environment", "checking OpenClaw Node runtime environment")?;
             let report = node_runtime::inspect_runtime(app);
             let status = status_store::mark_node_runtime(
@@ -302,7 +302,7 @@ pub fn install(app: &AppHandle, app_id: &str) -> Result<RuntimeActionResult, Str
     let _ = status_store::mark_installing(app, &recipe.id)?;
 
     let result = match recipe.runtime.as_str() {
-        "native-cli" if recipe.id == "openclaw" => match native_cli::install_openclaw(app) {
+        "native-cli" => match native_cli::install_openclaw(app) {
             Ok(_) => {
                 let status = status_store::mark_installed(app, &recipe.id)?;
                 let report = node_runtime::inspect_runtime(app);
@@ -395,7 +395,7 @@ pub fn start(app: &AppHandle, app_id: &str) -> Result<RuntimeActionResult, Strin
 
     progress_events::step(app, &recipe.id, &progress_id, operation, "runtime-start", 3, total_steps, "Starting app runtime.");
     let result = match recipe.runtime.as_str() {
-        "native-cli" if recipe.id == "openclaw" => match native_cli::start_openclaw(app, 18789) {
+        "native-cli" => match native_cli::start_openclaw(app, 18789) {
             Ok(pid) => {
                 if let Some(pid) = pid {
                     let _ = status_store::mark_running_with_pid(app, &recipe.id, pid)?;
@@ -494,7 +494,7 @@ pub fn stop(app: &AppHandle, app_id: &str) -> Result<RuntimeActionResult, String
 
     progress_events::step(app, &recipe.id, &progress_id, operation, "runtime-stop", 2, total_steps, "Stopping managed runtime resources.");
     let result = match recipe.runtime.as_str() {
-        "native-cli" if recipe.id == "openclaw" => match native_cli::stop_openclaw(app) {
+        "native-cli" => match native_cli::stop_openclaw(app) {
             Ok(message) => {
                 logs::append(app, &recipe.id, "stop", &message)?;
                 let status = status_store::mark_stopped(app, &recipe.id)?;
@@ -558,7 +558,7 @@ pub fn open_dashboard(app: &AppHandle, app_id: &str) -> Result<RuntimeActionResu
     };
 
     let result = match recipe.runtime.as_str() {
-        "native-cli" if recipe.id == "openclaw" => match native_cli::openclaw_dashboard(app, 18789) {
+        "native-cli" => match native_cli::openclaw_dashboard(app, 18789) {
             Ok(url) => match open_embedded_app_window(app, &recipe.id, "OpenClaw Desktop", &url) {
                 Ok(_) => RuntimeActionResult::ok(&recipe.id, "OpenClaw Desktop chat opened.", Some(current_status(app, &recipe))),
                 Err(error) => fail_with_persisted_status(app, &recipe.id, error),
@@ -914,7 +914,7 @@ pub fn check_runtime_status(app: &AppHandle, app_id: &str) -> Result<RuntimeActi
             }),
             Err(error) => Ok(fail_with_persisted_status(app, &recipe.id, error)),
         },
-        "native-cli" if recipe.id == "openclaw" => check_gateway_status(app, app_id),
+        "native-cli" => check_gateway_status(app, app_id),
         other => Ok(RuntimeActionResult::fail(
             &recipe.id,
             format!("Runtime status is not implemented for {other}."),

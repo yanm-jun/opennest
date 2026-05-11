@@ -278,8 +278,8 @@ function Btn({ onClick, busy, label, disabled, primary, secondary, danger }: {
   onClick: () => void; busy: string | null; label: string;
   disabled?: boolean | ""; primary?: boolean; secondary?: boolean; danger?: boolean | "";
 }) {
-  let cls = "rounded-lg px-3 py-1.5 text-[12px] font-medium transition disabled:opacity-30 ";
-  if (primary) cls += "bg-[var(--fg-strong)] text-[var(--bg-strong)] hover:opacity-90";
+  let cls = "rounded-lg px-3 py-1.5 text-[12px] font-medium transition disabled:opacity-60 ";
+  if (primary) cls += "bg-emerald-600 text-white hover:bg-emerald-700 hover:opacity-90";
   else if (danger) cls += "border border-red-200 text-red-700 hover:bg-red-50";
   else cls += "border border-[var(--border-soft)] text-[var(--fg-soft)] hover:text-[var(--fg-strong)] hover:border-[var(--fg-strong)]";
   return <button onClick={onClick} disabled={!!busy || !!disabled} className={cls}>{busy === label ? `${label}...` : label}</button>;
