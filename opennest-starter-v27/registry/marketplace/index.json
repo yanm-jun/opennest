@@ -1,0 +1,117 @@
+[
+  {
+    "schemaVersion": "2.0.0",
+    "id": "n8n",
+    "name": "n8n",
+    "summary": "开源自动化工作流引擎，可视化的 Zapier/Make 替代品",
+    "description": "n8n 是一个可自托管的可视化工作流自动化平台。通过 Docker Compose 一键部署。",
+    "runtime": "docker-compose",
+    "category": "自动化",
+    "versionSource": "docker:n8nio/n8n:latest",
+    "homepage": "https://n8n.io",
+    "ports": [5678],
+    "tags": ["workflow", "automation", "low-code"],
+    "start": {
+      "strategy": "docker-compose",
+      "args": ["up", "-d"],
+      "healthcheck": "http://127.0.0.1:5678/"
+    },
+    "stop": { "strategy": "docker-compose", "args": ["stop"] },
+    "dashboard": { "strategy": "url", "url": "http://127.0.0.1:5678/" },
+    "logs": { "strategy": "docker-compose-logs", "tail": 200 },
+    "requirements": { "docker": true, "memoryGbRecommended": 4 },
+    "secrets": []
+  },
+  {
+    "schemaVersion": "2.0.0",
+    "id": "langflow",
+    "name": "Langflow",
+    "summary": "可视化的 LLM 应用构建器，拖拽式 AI 流程设计",
+    "description": "Langflow 是一个低代码平台，用于构建和实验 LLM 应用、Agent 和 RAG 流程。",
+    "runtime": "docker-compose",
+    "category": "AI 构建器",
+    "versionSource": "docker:langflowai/langflow:latest",
+    "homepage": "https://www.langflow.org",
+    "ports": [7860],
+    "tags": ["llm", "visual-builder", "agent"],
+    "start": {
+      "strategy": "docker-compose",
+      "args": ["up", "-d"],
+      "healthcheck": "http://127.0.0.1:7860/"
+    },
+    "stop": { "strategy": "docker-compose", "args": ["stop"] },
+    "dashboard": { "strategy": "url", "url": "http://127.0.0.1:7860/" },
+    "logs": { "strategy": "docker-compose-logs", "tail": 200 },
+    "requirements": { "docker": true, "memoryGbRecommended": 4 },
+    "secrets": []
+  },
+  {
+    "schemaVersion": "2.0.0",
+    "id": "qdrant",
+    "name": "Qdrant",
+    "summary": "高性能向量数据库，RAG 应用的存储引擎",
+    "description": "Qdrant 是一个用 Rust 编写的向量相似性搜索引擎，提供生产级的向量数据库服务。",
+    "runtime": "docker-compose",
+    "category": "向量数据库",
+    "versionSource": "docker:qdrant/qdrant:latest",
+    "homepage": "https://qdrant.tech",
+    "ports": [6333, 6334],
+    "tags": ["vector-db", "rag", "search"],
+    "start": {
+      "strategy": "docker-compose",
+      "args": ["up", "-d"],
+      "healthcheck": "http://127.0.0.1:6333/"
+    },
+    "stop": { "strategy": "docker-compose", "args": ["stop"] },
+    "dashboard": { "strategy": "url", "url": "http://127.0.0.1:6333/dashboard" },
+    "logs": { "strategy": "docker-compose-logs", "tail": 200 },
+    "requirements": { "docker": true, "memoryGbRecommended": 2 },
+    "secrets": []
+  },
+  {
+    "schemaVersion": "2.0.0",
+    "id": "anything-llm",
+    "name": "AnythingLLM",
+    "summary": "全能 LLM 桌面应用，支持多模型、文档、Agent",
+    "description": "AnythingLLM 是一个全功能的 AI 桌面应用，支持多种 LLM、文档管理、自定义 Agent，拥有漂亮的 Web UI。",
+    "runtime": "docker-compose",
+    "category": "AI 工具箱",
+    "versionSource": "docker:mintplexlabs/anythingllm:latest",
+    "homepage": "https://anythingllm.com",
+    "ports": [3001],
+    "tags": ["llm", "rag", "documents", "multi-model"],
+    "start": {
+      "strategy": "docker-compose",
+      "args": ["up", "-d"],
+      "healthcheck": "http://127.0.0.1:3001/"
+    },
+    "stop": { "strategy": "docker-compose", "args": ["stop"] },
+    "dashboard": { "strategy": "url", "url": "http://127.0.0.1:3001/" },
+    "logs": { "strategy": "docker-compose-logs", "tail": 200 },
+    "requirements": { "docker": true, "memoryGbRecommended": 4 },
+    "secrets": []
+  },
+  {
+    "schemaVersion": "2.0.0",
+    "id": "ollama",
+    "name": "Ollama",
+    "summary": "本地运行大语言模型的最简单方式",
+    "description": "Ollama 让你在本地轻松运行 Llama、Mistral、Gemma 等开源大模型，提供 CLI 和 REST API。",
+    "runtime": "docker-compose",
+    "category": "模型运行时",
+    "versionSource": "docker:ollama/ollama:latest",
+    "homepage": "https://ollama.com",
+    "ports": [11434],
+    "tags": ["llm", "local-models", "inference"],
+    "start": {
+      "strategy": "docker-compose",
+      "args": ["up", "-d"],
+      "healthcheck": "http://127.0.0.1:11434/"
+    },
+    "stop": { "strategy": "docker-compose", "args": ["stop"] },
+    "dashboard": { "strategy": "url", "url": "http://127.0.0.1:11434/" },
+    "logs": { "strategy": "docker-compose-logs", "tail": 200 },
+    "requirements": { "docker": true, "memoryGbRecommended": 8 },
+    "secrets": []
+  }
+]

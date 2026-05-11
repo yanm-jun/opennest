@@ -1,0 +1,10 @@
+{
+  "riskLevel": "low",
+  "estimatedTime": "Instant",
+  "estimatedDisk": "Minimal",
+  "downloads": [],
+  "writes": ["%APPDATA%/com.opennest.desktop/apps/demo-local-web"],
+  "ports": [4310],
+  "permissions": [],
+  "rollback": ["No runtime-managed assets"]
+}

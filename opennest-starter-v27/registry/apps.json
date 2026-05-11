@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "apps": [
+    {
+      "id": "openclaw",
+      "featured": true
+    },
+    {
+      "id": "open-webui",
+      "featured": true
+    },
+    {
+      "id": "flowise",
+      "featured": true
+    },
+    {
+      "id": "dify",
+      "featured": false
+    },
+    {
+      "id": "demo-local-web",
+      "featured": false
+    }
+  ]
+}

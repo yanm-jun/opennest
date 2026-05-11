@@ -1,0 +1,28 @@
+{
+  "runtimeType": "local-web",
+  "versionSource": "demo:local-web",
+  "license": "demo",
+  "paths": {
+    "appDir": "${openNestAppData}/apps/demo-local-web",
+    "logsDir": "${appDir}/logs"
+  },
+  "install": {
+    "strategy": "none"
+  },
+  "start": {
+    "strategy": "none",
+    "healthcheck": "http://127.0.0.1:4310/"
+  },
+  "stop": {
+    "strategy": "none"
+  },
+  "dashboard": {
+    "strategy": "url",
+    "url": "http://127.0.0.1:4310/"
+  },
+  "logs": {
+    "path": "${appDir}/logs/demo-local-web.log",
+    "tail": 100
+  },
+  "permissions": []
+}

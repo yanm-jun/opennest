@@ -1,0 +1,20 @@
+﻿{
+    "id":  "flowise",
+    "name":  "Flowise",
+    "description":  "Flowise runs through Docker Compose. OpenNest writes the compose file and manages lifecycle.",
+    "summary":  "Build AI agents visually and run Flowise locally.",
+    "category":  "Visual Agent Builder",
+    "icon":  "nodes",
+    "tags":  [
+                 "Docker",
+                 "Workflow"
+             ],
+    "difficulty":  "Medium",
+    "priority":  "third",
+    "homepage":  "https://github.com/FlowiseAI/Flowise",
+    "sourceUrl":  "https://github.com/FlowiseAI/Flowise",
+    "screenshots":  [
+                        "screenshots/01-main.svg"
+                    ],
+    "sourceType":  "open-source"
+}

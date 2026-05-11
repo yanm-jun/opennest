@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenNest Recipe",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "runtime",
+    "category",
+    "install",
+    "start",
+    "dashboard"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "runtime": {
+      "enum": [
+        "native-cli",
+        "docker-compose",
+        "external-compose",
+        "webview",
+        "mcp-server",
+        "agent-container"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "versionSource": {
+      "type": "string"
+    },
+    "homepage": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "requirements": {
+      "type": "object"
+    },
+    "install": {
+      "type": "object"
+    },
+    "start": {
+      "type": "object"
+    },
+    "stop": {
+      "type": "object"
+    },
+    "dashboard": {
+      "type": "object"
+    },
+    "logs": {
+      "type": "object"
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,8 @@
+{
+  "installedState": "not_installed",
+  "effectivePort": 4310,
+  "effectiveDashboardUrl": "http://127.0.0.1:4310/",
+  "lastStartTime": null,
+  "lastHealthResult": null,
+  "logsPath": "${appDir}/logs/demo-local-web.log"
+}

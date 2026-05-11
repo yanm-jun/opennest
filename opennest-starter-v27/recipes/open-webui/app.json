@@ -1,0 +1,20 @@
+﻿{
+    "id":  "open-webui",
+    "name":  "Open WebUI",
+    "description":  "A local web UI for AI models. OpenNest manages Docker Compose lifecycle and opens the dashboard.",
+    "summary":  "Run Open WebUI locally through Docker Compose.",
+    "category":  "AI Chat UI",
+    "icon":  "browser",
+    "tags":  [
+                 "Docker",
+                 "Chat UI"
+             ],
+    "difficulty":  "Medium",
+    "priority":  "second",
+    "homepage":  "https://github.com/open-webui/open-webui",
+    "sourceUrl":  "https://github.com/open-webui/open-webui",
+    "screenshots":  [
+                        "screenshots/01-main.svg"
+                    ],
+    "sourceType":  "open-source"
+}

@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenNest App Center Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: linear-gradient(180deg, #fffdf8 0%, #f5f3ee 100%);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen p-6 text-slate-900">
+    <div class="mx-auto grid max-w-[1600px] gap-6 xl:grid-cols-[280px_minmax(0,1fr)]">
+      <aside class="flex h-full flex-col rounded-[28px] border border-slate-200 bg-[#fdfdfc] p-5 shadow-sm">
+        <div class="flex items-center gap-3 rounded-3xl border border-slate-200 bg-white px-4 py-3">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-100 text-lg font-semibold text-orange-700">ON</div>
+          <div>
+            <div class="text-sm font-semibold text-slate-950">OpenNest</div>
+            <div class="text-xs text-slate-500">AI App Runtime</div>
+          </div>
+        </div>
+
+        <nav class="mt-6 space-y-2">
+          <button class="flex w-full items-center gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-left text-sm text-white shadow-sm">App Center</button>
+          <button class="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm text-slate-600 hover:bg-white">My Library</button>
+          <button class="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm text-slate-600 hover:bg-white">Recipes</button>
+          <button class="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm text-slate-600 hover:bg-white">Runtimes</button>
+          <button class="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm text-slate-600 hover:bg-white">Logs</button>
+          <button class="flex w-full items-center gap-3 rounded-2xl px-4 py-3 text-left text-sm text-slate-600 hover:bg-white">Settings</button>
+        </nav>
+
+        <section class="mt-auto pt-6">
+          <div class="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
+            <h3 class="text-sm font-semibold text-slate-950">Runtime Guard</h3>
+            <p class="text-xs text-slate-500">Desktop runtime protections surfaced before install.</p>
+            <div class="mt-4 space-y-3">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2.5"><div class="flex justify-between"><span class="text-sm font-medium">Docker Ready</span><span class="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] text-emerald-700">On</span></div><p class="mt-1 text-xs text-slate-500">Connected</p></div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2.5"><div class="flex justify-between"><span class="text-sm font-medium">Node Runtime Managed</span><span class="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] text-emerald-700">On</span></div><p class="mt-1 text-xs text-slate-500">Fallback ready</p></div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2.5"><div class="flex justify-between"><span class="text-sm font-medium">Ports Resolver on</span><span class="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] text-emerald-700">On</span></div><p class="mt-1 text-xs text-slate-500">Collision aware</p></div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2.5"><div class="flex justify-between"><span class="text-sm font-medium">Secrets Redacted</span><span class="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] text-emerald-700">On</span></div><p class="mt-1 text-xs text-slate-500">Backend only</p></div>
+            </div>
+          </div>
+        </section>
+      </aside>
+
+      <main class="space-y-6">
+        <section class="rounded-[30px] border border-slate-200 bg-white/95 p-6 shadow-sm">
+          <div class="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
+            <div>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-700">Recipe System</span>
+                <span class="rounded-full bg-sky-100 px-3 py-1 text-xs font-medium text-sky-700">Desktop MVP</span>
+              </div>
+              <h1 class="mt-4 text-3xl font-semibold tracking-tight text-slate-950">OpenNest App Center</h1>
+              <p class="mt-2 max-w-3xl text-sm leading-6 text-slate-600">把 GitHub 开源 AI 项目变成普通用户能点开的本地应用</p>
+            </div>
+            <label class="flex w-full max-w-md items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+              <span class="text-slate-400">🔎</span>
+              <input id="search" placeholder="Search apps, runtimes, recipes" class="w-full bg-transparent text-sm outline-none" />
+            </label>
+          </div>
+
+          <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <div class="rounded-[24px] border border-slate-200 bg-[#fcfcfa] p-5"><div class="text-sm font-semibold">Recipe-driven</div><div class="mt-2 text-2xl font-semibold">6 curated apps</div><p class="mt-2 text-sm leading-6 text-slate-600">Each app maps to metadata, runtime strategy, and safe defaults.</p></div>
+            <div class="rounded-[24px] border border-slate-200 bg-[#fcfcfa] p-5"><div class="text-sm font-semibold">Runtime health</div><div class="mt-2 text-2xl font-semibold">Guarded startup</div><p class="mt-2 text-sm leading-6 text-slate-600">Preflight, port resolution, and readiness are surfaced before launch.</p></div>
+            <div class="rounded-[24px] border border-slate-200 bg-[#fcfcfa] p-5"><div class="text-sm font-semibold">Safe install</div><div class="mt-2 text-2xl font-semibold">Plan gated</div><p class="mt-2 text-sm leading-6 text-slate-600">Users review what OpenNest will prepare before runtime actions unlock.</p></div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 2xl:grid-cols-[minmax(0,1.3fr)_420px]">
+          <div class="space-y-6">
+            <section class="rounded-[30px] border border-slate-200 bg-white p-6 shadow-sm">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <h2 class="text-xl font-semibold text-slate-950">Featured Apps</h2>
+                  <p class="mt-1 text-sm text-slate-600">Recipe-backed app previews for real local runtimes, future adapters, and guarded desktop installs.</p>
+                </div>
+                <div class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"><span id="shownCount">6</span> shown</div>
+              </div>
+              <div id="appGrid" class="mt-5 grid gap-4 lg:grid-cols-2"></div>
+            </section>
+
+            <section class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+              <div class="grid gap-6 xl:grid-cols-[1.4fr_0.9fr]">
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-950">Install Plan</h3>
+                  <p class="mt-1 text-sm text-slate-600">Preview what OpenNest will prepare before runtime install commands are connected.</p>
+                  <div id="installPlan" class="mt-4 space-y-3"></div>
+                </div>
+                <div class="rounded-[24px] border border-slate-200 bg-[#fcfcfa] p-5">
+                  <h3 class="text-lg font-semibold text-slate-950">Preflight Gate</h3>
+                  <p class="mt-1 text-sm text-slate-600">Front-end state only for now.</p>
+                  <div id="gateBox" class="mt-4 rounded-2xl border px-4 py-3 text-sm"></div>
+                  <div class="mt-4 flex flex-wrap gap-3">
+                    <button id="acceptBtn" class="rounded-2xl bg-slate-900 px-4 py-2.5 text-sm font-medium text-white">Accept plan</button>
+                    <button id="clearBtn" class="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-800">Clear acceptance</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+              <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-950">Live Progress</h3>
+                  <p class="mt-1 text-sm text-slate-600">Static preview of progress stages keyed off the current app selection.</p>
+                </div>
+                <div id="progressMeta" class="rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700"></div>
+              </div>
+              <div class="mt-5 h-3 overflow-hidden rounded-full bg-slate-100"><div id="progressBar" class="h-full rounded-full bg-orange-500 transition-all"></div></div>
+              <div id="progressStages" class="mt-5 grid gap-3 lg:grid-cols-5"></div>
+            </section>
+
+            <section class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-slate-950">Runtime Controls</h3>
+              <p class="mt-1 text-sm text-slate-600">UI preview for recipe runtime actions.</p>
+              <div class="mt-5 grid gap-3 md:grid-cols-4">
+                <button class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800">Check</button>
+                <button class="rounded-2xl border border-slate-900 bg-slate-900 px-4 py-3 text-sm font-medium text-white">Start</button>
+                <button class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800">Stop</button>
+                <button class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800">Restart</button>
+                <button class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800">Logs</button>
+                <button class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800">Rollback</button>
+                <button class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-800">Keep data</button>
+                <button class="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700">Remove data</button>
+              </div>
+            </section>
+          </div>
+
+          <div class="space-y-6">
+            <section class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-xs font-medium uppercase tracking-[0.22em] text-slate-400">App Detail</p>
+                  <h2 id="detailName" class="mt-2 text-2xl font-semibold text-slate-950"></h2>
+                  <p id="detailDescription" class="mt-3 text-sm leading-6 text-slate-600"></p>
+                </div>
+                <span id="detailAvailability" class="rounded-full px-3 py-1 text-xs font-medium"></span>
+              </div>
+              <div class="mt-5 grid gap-3 md:grid-cols-2">
+                <div class="rounded-2xl bg-slate-50 px-4 py-3"><div class="text-xs font-medium uppercase tracking-wide text-slate-500">Runtime</div><div id="detailRuntime" class="mt-2 text-sm font-medium text-slate-900"></div></div>
+                <div class="rounded-2xl bg-slate-50 px-4 py-3"><div class="text-xs font-medium uppercase tracking-wide text-slate-500">Port</div><div id="detailPort" class="mt-2 text-sm font-medium text-slate-900"></div></div>
+                <div class="rounded-2xl bg-slate-50 px-4 py-3"><div class="text-xs font-medium uppercase tracking-wide text-slate-500">Health</div><div id="detailHealth" class="mt-2 text-sm font-medium text-slate-900"></div></div>
+                <div class="rounded-2xl bg-slate-50 px-4 py-3"><div class="text-xs font-medium uppercase tracking-wide text-slate-500">Risk</div><div id="detailRisk" class="mt-2 text-sm font-medium text-slate-900"></div></div>
+              </div>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <button class="rounded-2xl bg-slate-900 px-4 py-2.5 text-sm font-medium text-white">Install</button>
+                <button class="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-800">Start</button>
+                <button class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm font-medium text-slate-800">Dashboard</button>
+              </div>
+              <div id="detailGateState" class="mt-5 rounded-2xl border px-4 py-3 text-sm"></div>
+            </section>
+
+            <div id="messageBox" class="hidden rounded-[24px] border border-slate-200 bg-white px-5 py-4 text-sm text-slate-700 shadow-sm"></div>
+
+            <section class="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-slate-950">Platform Capabilities</h3>
+              <div class="mt-4 grid gap-3">
+                <div class="rounded-2xl bg-slate-50 px-4 py-3"><div class="text-sm font-medium text-slate-900">Status Store</div><p class="mt-1 text-sm leading-6 text-slate-600">Persist install and runtime state so the desktop shell can reopen with context intact.</p></div>
+                <div class="rounded-2xl bg-slate-50 px-4 py-3"><div class="text-sm font-medium text-slate-900">Secret Redaction</div><p class="mt-1 text-sm leading-6 text-slate-600">Keep provider tokens out of page state and route them through secure backend storage.</p></div>
+                <div class="rounded-2xl bg-slate-50 px-4 py-3"><div class="text-sm font-medium text-slate-900">Resource Preflight</div><p class="mt-1 text-sm leading-6 text-slate-600">Check ports, Docker, directories, and machine readiness before running a recipe.</p></div>
+                <div class="rounded-2xl bg-slate-50 px-4 py-3"><div class="text-sm font-medium text-slate-900">Rollback Safety</div><p class="mt-1 text-sm leading-6 text-slate-600">Keep install plans explicit so failed setup can be reversed without hiding risk.</p></div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const apps = [
+        {
+          id: "openclaw",
+          name: "OpenClaw",
+          runtime: "Managed Node runtime",
+          risk: "medium",
+          tagline: "Desktop-first agent app with managed local runtime.",
+          status: "ready to install",
+          health: "Waiting for install plan review",
+          port: "18789",
+          availability: "active preview",
+          description: "A managed local AI workspace that OpenNest can bootstrap with a Node runtime, token storage, and a ready-to-open desktop URL.",
+          steps: [
+            "Prepare managed Node runtime if system Node is missing",
+            "Install openclaw@latest into OpenNest app data",
+            "Save model token through secure backend storage",
+            "Start openclaw gateway and verify TCP readiness",
+          ],
+          stages: [
+            ["install-plan", "Digest and runtime actions prepared for review.", "active"],
+            ["resource-preflight", "Will verify disk, Node, and local workspace requirements.", "pending"],
+            ["port-resolution", "Will reserve desktop-safe port mappings before launch.", "pending"],
+            ["runtime", "Managed Node process will start inside OpenNest app data.", "pending"],
+            ["readiness", "Gateway endpoint must answer before Dashboard becomes actionable.", "pending"],
+          ],
+        },
+        {
+          id: "open-webui",
+          name: "Open WebUI",
+          runtime: "Docker Compose stack",
+          risk: "low",
+          tagline: "Local chat UI that OpenNest can boot as a managed stack.",
+          status: "installed",
+          health: "Healthy when containers are running",
+          port: "3000",
+          availability: "active preview",
+          description: "A familiar chat interface packaged as a Docker-managed recipe with an explicit port, startup sequence, and dashboard handoff.",
+          steps: [
+            "Load bundled Compose template and image sources",
+            "Create managed app data and bind runtime directories",
+            "Resolve dashboard port before starting containers",
+            "Start containers and verify web readiness",
+          ],
+          stages: [
+            ["install-plan", "Compose recipe already described and ready for review.", "complete"],
+            ["resource-preflight", "Docker and host directories checked for this app.", "complete"],
+            ["port-resolution", "Dashboard port reserved for the running stack.", "complete"],
+            ["runtime", "Containers can be started or stopped from runtime controls.", "active"],
+            ["readiness", "Dashboard URL is exposed only after container health checks pass.", "pending"],
+          ],
+        },
+        {
+          id: "flowise",
+          name: "Flowise",
+          runtime: "Docker Compose stack",
+          risk: "medium",
+          tagline: "Graph-based AI builder packaged as a user-friendly desktop app.",
+          status: "ready to install",
+          health: "Docker preflight recommended",
+          port: "3001",
+          availability: "active preview",
+          description: "A node-based AI workflow builder that fits OpenNest's recipe and one-click deployment model without exposing raw Compose details to end users.",
+          steps: [
+            "Prepare Flowise Compose recipe and volume layout",
+            "Check Docker runtime and writable app storage",
+            "Reserve visual builder port and publish dashboard endpoint",
+            "Start services and verify editor readiness",
+          ],
+          stages: [
+            ["install-plan", "Flowise recipe summary prepared for user review.", "active"],
+            ["resource-preflight", "Docker and volume checks queued for install time.", "pending"],
+            ["port-resolution", "Reserved dashboard port will be shown once allocated.", "pending"],
+            ["runtime", "Compose runtime stays behind OpenNest controls.", "pending"],
+            ["readiness", "Editor endpoint will be validated before launch.", "pending"],
+          ],
+        },
+        {
+          id: "dify",
+          name: "Dify",
+          runtime: "External Compose adapter",
+          risk: "high",
+          tagline: "A broader AI workflow stack with explicit preflight and rollback expectations.",
+          status: "not installed",
+          health: "Review required due to stack size",
+          port: "80",
+          availability: "active preview",
+          description: "A heavier workflow platform that OpenNest can present through recipes, install plans, and runtime guarding instead of raw infrastructure setup.",
+          steps: [
+            "Resolve official compose source and runtime adapter strategy",
+            "Run resource preflight for ports, memory, and data directories",
+            "Stage required credentials through backend-managed secret handling",
+            "Start services and verify multi-service readiness before dashboard access",
+          ],
+          stages: [
+            ["install-plan", "Multi-service plan assembled for explicit review.", "active"],
+            ["resource-preflight", "Will check machine capacity and runtime prerequisites.", "pending"],
+            ["port-resolution", "Service ports need coordinated resolution before launch.", "pending"],
+            ["runtime", "External compose adapter will manage stack lifecycle.", "pending"],
+            ["readiness", "Multiple services must settle before the dashboard is considered usable.", "pending"],
+          ],
+        },
+        {
+          id: "mcp-hub",
+          name: "MCP Hub",
+          runtime: "MCP runtime adapter",
+          risk: "medium",
+          tagline: "Bridge desktop-friendly app management with future MCP server orchestration.",
+          status: "planned",
+          health: "Planned runtime path",
+          port: "planned",
+          availability: "planned",
+          description: "A planned marketplace surface for MCP servers and adapters that fits OpenNest's runtime-guarded desktop model.",
+          steps: [
+            "Define MCP runtime adapter and app metadata contract",
+            "Apply default-deny network and credential policy model",
+            "Prepare sandbox and bridge routing for local tools",
+            "Expose start and dashboard controls once adapter lands",
+          ],
+          stages: [
+            ["install-plan", "Planned recipe contract not finalized yet.", "active"],
+            ["resource-preflight", "Checks depend on future MCP runtime requirements.", "pending"],
+            ["port-resolution", "Port needs will depend on adapter and bridge shape.", "pending"],
+            ["runtime", "MCP runtime adapter is intentionally marked planned.", "pending"],
+            ["readiness", "Readiness criteria will be defined after backend integration.", "pending"],
+          ],
+        },
+        {
+          id: "comfyui",
+          name: "ComfyUI",
+          runtime: "Sandboxed app runtime",
+          risk: "high",
+          tagline: "Node-based image generation with future sandboxed runtime controls.",
+          status: "planned",
+          health: "Planned GPU-sensitive runtime",
+          port: "planned",
+          availability: "planned",
+          description: "A planned visual generation workflow app that fits the same recipe, runtime control, and rollback model once the desktop runtime path is ready.",
+          steps: [
+            "Define sandbox runtime and hardware expectation checks",
+            "Prepare managed model and workflow storage layout",
+            "Review ports, data retention, and rollback boundaries",
+            "Add dashboard and readiness contract after runtime adapter lands",
+          ],
+          stages: [
+            ["install-plan", "Planned install contract only.", "active"],
+            ["resource-preflight", "Future hardware and disk checks not wired yet.", "pending"],
+            ["port-resolution", "Port strategy depends on final sandbox runtime.", "pending"],
+            ["runtime", "Sandboxed runtime is still planned.", "pending"],
+            ["readiness", "Readiness checks will follow runtime implementation.", "pending"],
+          ],
+        },
+      ];
+
+      let selectedId = "openclaw";
+      let gateState = {};
+
+      const appGrid = document.getElementById("appGrid");
+      const search = document.getElementById("search");
+      const shownCount = document.getElementById("shownCount");
+      const installPlan = document.getElementById("installPlan");
+      const gateBox = document.getElementById("gateBox");
+      const progressMeta = document.getElementById("progressMeta");
+      const progressBar = document.getElementById("progressBar");
+      const progressStages = document.getElementById("progressStages");
+      const messageBox = document.getElementById("messageBox");
+
+      function filteredApps() {
+        const q = search.value.trim().toLowerCase();
+        if (!q) return apps;
+        return apps.filter((app) => [app.name, app.runtime, app.tagline].join(" ").toLowerCase().includes(q));
+      }
+
+      function currentApp() {
+        return filteredApps().find((app) => app.id === selectedId) || apps.find((app) => app.id === selectedId) || apps[0];
+      }
+
+      function statusTone(status) {
+        if (status === "planned") return "bg-amber-100 text-amber-700";
+        if (status === "installed") return "bg-sky-100 text-sky-700";
+        return "bg-slate-100 text-slate-700";
+      }
+
+      function renderCards() {
+        const list = filteredApps();
+        shownCount.textContent = list.length;
+        appGrid.innerHTML = list.map((app) => `
+          <button data-id="${app.id}" class="rounded-[26px] border p-5 text-left shadow-sm transition ${app.id === selectedId ? "border-orange-300 bg-orange-50/70 ring-1 ring-orange-200" : "border-slate-200 bg-white"}">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl text-sm font-semibold ${app.id === selectedId ? "bg-orange-500 text-white" : "bg-slate-100 text-slate-700"}">${app.name.split(" ").map(p => p[0]).join("").slice(0,2).toUpperCase()}</div>
+                <div>
+                  <h3 class="text-base font-semibold text-slate-950">${app.name}</h3>
+                  <p class="mt-0.5 text-xs text-slate-500">${app.runtime}</p>
+                </div>
+              </div>
+              <span class="rounded-full px-2.5 py-1 text-[11px] font-medium ${statusTone(app.status)}">${app.status}</span>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-slate-600">${app.tagline}</p>
+            <div class="mt-5 grid gap-2 text-xs text-slate-600 sm:grid-cols-2">
+              <div class="rounded-2xl bg-slate-50 px-3 py-2">runtime: ${app.runtime}</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2">risk: ${app.risk}</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2">health: ${app.health}</div>
+              <div class="rounded-2xl bg-slate-50 px-3 py-2">port: ${app.port}</div>
+            </div>
+          </button>
+        `).join("");
+
+        appGrid.querySelectorAll("button").forEach((button) => {
+          button.addEventListener("click", () => {
+            selectedId = button.dataset.id;
+            render();
+          });
+        });
+      }
+
+      function renderDetail() {
+        const app = currentApp();
+        document.getElementById("detailName").textContent = app.name;
+        document.getElementById("detailDescription").textContent = app.description;
+        document.getElementById("detailRuntime").textContent = app.runtime;
+        document.getElementById("detailPort").textContent = app.port;
+        document.getElementById("detailHealth").textContent = app.health;
+        document.getElementById("detailRisk").textContent = app.risk;
+        const availability = document.getElementById("detailAvailability");
+        availability.textContent = app.availability;
+        availability.className = `rounded-full px-3 py-1 text-xs font-medium ${app.availability === "planned" ? "bg-amber-100 text-amber-700" : "bg-emerald-100 text-emerald-700"}`;
+
+        const accepted = gateState[app.id] === "accepted";
+        const gate = document.getElementById("detailGateState");
+        gate.className = `mt-5 rounded-2xl border px-4 py-3 text-sm ${accepted ? "border-emerald-200 bg-emerald-50 text-emerald-900" : "border-amber-200 bg-amber-50 text-amber-900"}`;
+        gate.textContent = accepted ? "Current install plan has been accepted in local preview state." : "Install plan review is required before runtime actions should unlock.";
+      }
+
+      function renderPlan() {
+        const app = currentApp();
+        installPlan.innerHTML = app.steps.map((step, index) => `
+          <div class="rounded-2xl bg-slate-50 px-4 py-3">
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-xs font-semibold text-slate-700">${index + 1}</div>
+              <div class="text-sm font-medium text-slate-900">${step}</div>
+            </div>
+          </div>
+        `).join("");
+
+        const accepted = gateState[app.id] === "accepted";
+        gateBox.className = `mt-4 rounded-2xl border px-4 py-3 text-sm ${accepted ? "border-emerald-200 bg-emerald-50 text-emerald-900" : "border-amber-200 bg-amber-50 text-amber-900"}`;
+        gateBox.innerHTML = accepted
+          ? "<div class='font-medium'>Plan accepted</div><p class='mt-1'>The current preview session allows follow-up runtime actions.</p>"
+          : "<div class='font-medium'>Review required</div><p class='mt-1'>Install and start should remain gated until the user reviews the current plan.</p>";
+      }
+
+      function renderProgress() {
+        const app = currentApp();
+        const activeIndex = Math.max(app.stages.findIndex((stage) => stage[2] === "active"), 0);
+        const percent = Math.round(((activeIndex + 1) / app.stages.length) * 100);
+        progressMeta.innerHTML = `<div class="font-medium text-slate-900">${app.name}</div><div class="mt-1">Current stage: ${app.stages[activeIndex][0]}</div>`;
+        progressBar.style.width = `${percent}%`;
+        progressStages.innerHTML = app.stages.map(([label, desc, state]) => `
+          <div class="rounded-2xl border px-4 py-3 ${state === "complete" ? "border-emerald-200 bg-emerald-50" : state === "active" ? "border-orange-200 bg-orange-50" : "border-slate-200 bg-slate-50"}">
+            <div class="text-xs font-semibold uppercase tracking-wide text-slate-500">${label}</div>
+            <div class="mt-2 text-sm font-medium text-slate-900">${state}</div>
+            <p class="mt-2 text-sm leading-6 text-slate-600">${desc}</p>
+          </div>
+        `).join("");
+      }
+
+      function render() {
+        renderCards();
+        renderDetail();
+        renderPlan();
+        renderProgress();
+      }
+
+      document.getElementById("acceptBtn").addEventListener("click", () => {
+        gateState[currentApp().id] = "accepted";
+        messageBox.classList.remove("hidden");
+        messageBox.textContent = `${currentApp().name}: install plan accepted in local preview state.`;
+        render();
+      });
+
+      document.getElementById("clearBtn").addEventListener("click", () => {
+        gateState[currentApp().id] = "review_required";
+        messageBox.classList.remove("hidden");
+        messageBox.textContent = `${currentApp().name}: install plan acceptance cleared.`;
+        render();
+      });
+
+      search.addEventListener("input", render);
+      render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+[package]
+name = "opennest-desktop-starter"
+version = "0.27.0"
+description = "OpenNest Desktop starter built from resource integration v24"
+authors = ["OpenNest"]
+edition = "2021"
+default-run = "opennest-desktop-starter"
+
+[lib]
+name = "opennest_desktop_starter_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-updater = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = { version = "0.4", features = ["serde"] }
+keyring = "3"
+include_dir = "0.7"
+rand = "0.8"
+url = "2"
+reqwest = { version = "0.12", features = ["rustls-tls", "json"], default-features = false }

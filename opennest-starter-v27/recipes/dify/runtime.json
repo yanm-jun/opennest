@@ -1,0 +1,8 @@
+{
+  "installedState": "not_installed",
+  "effectivePort": 80,
+  "effectiveDashboardUrl": "http://127.0.0.1/",
+  "lastStartTime": null,
+  "lastHealthResult": null,
+  "logsPath": "${appDir}/logs/dify.log"
+}

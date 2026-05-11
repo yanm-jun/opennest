@@ -1,0 +1,10 @@
+{
+  "riskLevel": "high",
+  "estimatedTime": "10-30 minutes",
+  "estimatedDisk": "~6-12 GB",
+  "downloads": ["Official Dify repository", "Multiple container images"],
+  "writes": ["%APPDATA%/com.opennest.desktop/apps/dify/source"],
+  "ports": [80],
+  "permissions": ["Docker Desktop", "Network access", "Local storage for multi-service stack"],
+  "rollback": ["docker compose down", "keep or remove cloned source on uninstall"]
+}

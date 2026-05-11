@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "apps": [
+    {
+      "id": "openclaw",
+      "recipe": "recipes/openclaw/recipe.opennest.json",
+      "runtime": "native-cli",
+      "featured": true
+    },
+    {
+      "id": "open-webui",
+      "recipe": "recipes/open-webui/recipe.opennest.json",
+      "runtime": "docker-compose",
+      "featured": true
+    },
+    {
+      "id": "flowise",
+      "recipe": "recipes/flowise/recipe.opennest.json",
+      "runtime": "docker-compose",
+      "featured": true
+    },
+    {
+      "id": "dify",
+      "recipe": "recipes/dify/recipe.opennest.json",
+      "runtime": "external-compose",
+      "featured": false
+    }
+  ]
+}

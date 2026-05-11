@@ -1,0 +1,11 @@
+{
+  "riskLevel": "medium",
+  "estimatedTime": "5-15 minutes",
+  "estimatedDisk": "~500 MB to 1.5 GB",
+  "downloads": ["openclaw@latest from npm", "Managed Node runtime fallback when system Node is missing"],
+  "writes": ["%APPDATA%/com.opennest.desktop/apps/openclaw"],
+  "ports": [18789],
+  "permissions": ["Local network listener", "Credential-store secrets"],
+  "rollback": ["Remove managed CLI files", "Stop gateway", "Preserve logs unless uninstall removes data"],
+  "notes": ["Official flow is install -> onboard -> gateway."]
+}

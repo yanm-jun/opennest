@@ -1,0 +1,10 @@
+{
+  "os": ["windows"],
+  "memory": "Minimal",
+  "disk": "Minimal",
+  "dockerRequired": false,
+  "nodeRequired": false,
+  "gitRequired": false,
+  "gpuRequired": false,
+  "ports": [4310]
+}
